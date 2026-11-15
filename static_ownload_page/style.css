@@ -1,0 +1,425 @@
+
+/* =====================================
+ *   LOCAL FONT
+ * ===================================== */
+
+@font-face {
+    font-family: "Priestacy";
+    src: url("./Font/Priestacy.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+
+/* =====================================
+ *   GLOBAL
+ * ===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    background: #000;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100svh;
+    color: #fff;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =====================================
+ *   SCREEN
+ * ===================================== */
+
+.screen {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #000;
+}
+
+
+/* =====================================
+ *   ELEMENT FLICKER
+ * ===================================== */
+
+@keyframes flicker {
+
+    0% {
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    22% {
+        opacity: 0.2;
+    }
+
+    34% {
+        opacity: 1;
+    }
+
+    48% {
+        opacity: 0.4;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0.7;
+    }
+
+    88% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.entrance {
+    animation: flicker 1s linear both;
+}
+
+
+/* =====================================
+ *   LOGO
+ * ===================================== */
+
+.logo {
+    width: 245px;
+    height: 245px;
+
+    flex-shrink: 0;
+
+    position: relative;
+
+    display: grid;
+    place-items: center;
+}
+
+.logo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logo span {
+    position: relative;
+    z-index: 2;
+
+    color: #000;
+
+    font-family: "Priestacy", cursive;
+    font-size: 73px;
+    font-weight: normal;
+
+    line-height: 1;
+
+    transform: translateY(-2px);
+}
+
+.logo span {
+    position: absolute;
+    left: 50%;
+    bottom: -40px;
+    transform: translateX(-50%);
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+/* =====================================
+ *   DOWNLOAD PAGE
+ * ===================================== */
+
+.download-layout {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+}
+
+
+/* Navigation */
+
+.navigation {
+    width: 330px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+    margin-top: 2px;
+}
+
+.arrow {
+    background: transparent;
+    border: none;
+
+    color: #fff;
+
+    font-size: 27px;
+    font-weight: bold;
+
+    cursor: pointer;
+    padding: 0 2px;
+}
+
+.arrow:hover {
+    color: #aaa;
+}
+
+.navigation-line {
+    height: 1px;
+
+    background: #414141;
+
+    flex: 1;
+}
+
+
+/* Download button */
+
+.download-btn {
+    width: 280px;
+    height: 54px;
+
+    background: #c6d0da;
+
+    border: none;
+    border-radius: 2px;
+
+    color: #000;
+
+    font-family: "Comic Neue", sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.download-btn:hover {
+    background: #fff;
+    width: 300px;
+}
+
+
+/* =====================================
+ *   THANK YOU PAGE
+ * ===================================== */
+
+.thanks-layout {
+    width: min(745px, 90vw);
+
+    display: grid;
+
+    grid-template-columns: 245px 1fr;
+
+    align-items: center;
+
+    column-gap: 25px;
+}
+
+
+/* Thank You Content */
+
+.thanks-content {
+    height: 245px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* Calligraphy heading */
+
+.thanks-title {
+    width: 100%;
+
+    white-space: nowrap;
+
+    font-family: "Priestacy", cursive;
+    font-size: clamp(35px, 5.5vw, 57px);
+
+    font-weight: normal;
+
+    line-height: 1.3;
+    text-align: center;
+
+    margin-top: -8px;
+}
+
+
+/* Retry link */
+
+.retry {
+    align-self: flex-end;
+
+    margin-top: 26px;
+    margin-right: 12px;
+
+    color: #a34cff;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.retry:hover {
+    color: #d1a3ff;
+    text-decoration: underline;
+}
+
+
+/* =====================================
+ *   GITHUB BUTTON
+ * ===================================== */
+
+.github-btn {
+    position: absolute;
+
+    bottom: -16px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 242px;
+    height: 54px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 9px;
+
+    border: 2px solid #444;
+    border-radius: 12px;
+
+    background: #151515;
+    color: #fff;
+
+    text-decoration: none;
+
+    font-family: "Comic Neue", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.github-btn:hover {
+    background: #252525;
+    border-color: #777;
+}
+
+.github-btn svg {
+    width: 23px;
+    height: 23px;
+
+    fill: currentColor;
+}
+
+
+/* =====================================
+ *   RESPONSIVE
+ * ===================================== */
+
+@media (max-width: 650px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .thanks-layout {
+        display: flex;
+        flex-direction: column;
+
+        gap: 28px;
+
+        padding: 30px 0;
+    }
+
+    .thanks-content {
+        width: 100%;
+        height: 190px;
+    }
+
+    .thanks-title {
+        white-space: normal;
+        font-size: 45px;
+    }
+
+    .retry {
+        margin-right: 0;
+    }
+
+    .github-btn {
+        bottom: -12px;
+    }
+
+    .logo {
+        width: 210px;
+        height: 210px;
+    }
+}
+
+
+/* =====================================
+ *   REDUCED MOTION
+ * ===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .entrance {
+        animation: none;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+
+    <title>:mOS: moriOS — Download</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <main class="screen download-screen">
+
+        <div class="download-layout">
+
+            <!-- :mOS: moriOS logo -->
+            <div class="logo entrance">
+
+                <img src="logo.png" alt=":mOS: moriOS">
+                <span>:mOS: moriOS</span>
+
+            </div>
+
+            <!-- Navigation -->
+            <div class="navigation entrance">
+
+                <button class="arrow" type="button" aria-label="Previous">
+                    ‹
+                </button>
+
+                <div class="navigation-line"></div>
+
+                <button class="arrow" type="button" aria-label="Next">
+                    ›
+                </button>
+
+            </div>
+
+            <!-- Download Button -->
+            <button
+                class="download-btn entrance"
+                id="downloadButton"
+                type="button">
+
+                DOWNLOAD (x64)
+
+            </button>
+
+        </div>
+
+    </main>
+
+    <!-- Download Actions -->
+    <script>
+        document.getElementById("downloadButton").addEventListener("click", function () {
+
+            // Open download page
+            window.open("./download.html", "_blank");
+
+            // Start ISO download
+            const downloadLink = document.createElement("a");
+
+            downloadLink.href =
+                "https://productionresultssa15.blob.core.windows.net/actions-results/6a2d7674-3c7e-43e8-be5f-49c3d96c8c61/workflow-job-run-17190d6b-e5a6-5f6b-9ea1-2ae05e60a375/artifacts/4171238a49f9475271292995cba49fabfef8c834470675dfa8f92f540881a58f.zip?rscd=attachment%3B+filename%3D%22iso-morios.zip%22&rsct=application%2Fzip&se=2026-11-15T14%3A49%3A36Z&sig=Z%2BcMCps9Y1BqSFzP8%2BQYQrmC2ux1%2BCSC1fUydYSw1cE%3D&ske=2026-11-15T16%3A11%3A14Z&skoid=ca7593d4-ee42-46cd-af88-8b886a2f84eb&sks=b&skt=2026-11-15T12%3A11%3A14Z&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skv=2025-11-05&sp=r&spr=https&sr=b&st=2026-11-15T14%3A39%3A31Z&sv=2025-11-05";
+
+            downloadLink.download =
+                "mOS-moriOS-Fedora-45-x86_64.iso";
+
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            downloadLink.remove();
+
+        });
+    </script>
+
+</body>
+</html>
